@@ -9,35 +9,41 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>300</height>
+    <width>821</width>
+    <height>291</height>
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
-    <width>500</width>
-    <height>300</height>
+    <width>300</width>
+    <height>200</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>500</width>
-    <height>300</height>
+    <width>1920</width>
+    <height>1080</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MoverConfigurator</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
   <property name="animated">
    <bool>true</bool>
   </property>
   <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -62,75 +68,75 @@
      <height>16777215</height>
     </size>
    </property>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>250</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QPushButton" name="findFolderButton">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="baseSize">
-        <size>
-         <width>30</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="mouseTracking">
-        <bool>false</bool>
-       </property>
-       <property name="layoutDirection">
-        <enum>Qt::LeftToRight</enum>
-       </property>
-       <property name="text">
-        <string>Cerca cartella</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QTextEdit" name="textEdit">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>80</y>
-      <width>271</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="documentTitle">
-     <string>folderName</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>500</width>
-     <height>18</height>
-    </rect>
-   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="3" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item alignment="Qt::AlignTop">
+       <widget class="QPushButton" name="findFolderButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Ricerca cartella</string>
+        </property>
+       </widget>
+      </item>
+      <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+       <widget class="QTextEdit" name="textEdit">
+        <property name="maximumSize">
+         <size>
+          <width>250</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="documentTitle">
+         <string>folderName</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="4" column="0">
+     <layout class="QFormLayout" name="formLayout"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="QScrollBar" name="verticalScrollBar">
+      <property name="layoutDirection">
+       <enum>Qt::RightToLeft</enum>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
