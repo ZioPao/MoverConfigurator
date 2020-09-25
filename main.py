@@ -11,18 +11,17 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 
-
 class Ui_MoverConfiguratorMain(object):
     def setupUi(self, MoverConfiguratorMain):
         MoverConfiguratorMain.setObjectName("MoverConfiguratorMain")
         MoverConfiguratorMain.setEnabled(True)
-        MoverConfiguratorMain.resize(821, 291)
+        MoverConfiguratorMain.resize(600, 400)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MoverConfiguratorMain.sizePolicy().hasHeightForWidth())
         MoverConfiguratorMain.setSizePolicy(sizePolicy)
-        MoverConfiguratorMain.setMinimumSize(QtCore.QSize(300, 200))
+        MoverConfiguratorMain.setMinimumSize(QtCore.QSize(600, 400))
         MoverConfiguratorMain.setMaximumSize(QtCore.QSize(1920, 1080))
         MoverConfiguratorMain.setAutoFillBackground(True)
         MoverConfiguratorMain.setAnimated(True)
@@ -40,51 +39,134 @@ class Ui_MoverConfiguratorMain(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName("gridLayout_2")
+        self.verticalScrollBar = QtWidgets.QScrollBar(self.centralwidget)
+        self.verticalScrollBar.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.verticalScrollBar.setOrientation(QtCore.Qt.Vertical)
+        self.verticalScrollBar.setObjectName("verticalScrollBar")
+        self.gridLayout_2.addWidget(self.verticalScrollBar, 3, 2, 1, 1)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.horizontalLayout_3.setContentsMargins(-1, -1, -1, 0)
         self.horizontalLayout_3.setSpacing(4)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.findFolderButton = QtWidgets.QPushButton(self.centralwidget)
+        self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
+        self.tabWidget.setObjectName("tabWidget")
+        self.FindFolder = QtWidgets.QWidget()
+        self.FindFolder.setObjectName("FindFolder")
+        self.formLayout = QtWidgets.QFormLayout(self.FindFolder)
+        self.formLayout.setObjectName("formLayout")
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.findFolderButton = QtWidgets.QPushButton(self.FindFolder)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.findFolderButton.sizePolicy().hasHeightForWidth())
         self.findFolderButton.setSizePolicy(sizePolicy)
         self.findFolderButton.setMinimumSize(QtCore.QSize(0, 30))
-        self.findFolderButton.setMaximumSize(QtCore.QSize(300, 30))
+        self.findFolderButton.setMaximumSize(QtCore.QSize(100, 30))
         self.findFolderButton.setObjectName("findFolderButton")
-        self.horizontalLayout_3.addWidget(self.findFolderButton, 0, QtCore.Qt.AlignTop)
-        self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setMaximumSize(QtCore.QSize(250, 30))
+        self.horizontalLayout.addWidget(self.findFolderButton)
+        self.textEdit = QtWidgets.QTextEdit(self.FindFolder)
+        self.textEdit.setMinimumSize(QtCore.QSize(100, 0))
+        self.textEdit.setMaximumSize(QtCore.QSize(167000, 30))
         self.textEdit.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.textEdit.setObjectName("textEdit")
-        self.horizontalLayout_3.addWidget(self.textEdit, 0, QtCore.Qt.AlignHCenter | QtCore.Qt.AlignTop)
-        self.gridLayout_2.addLayout(self.horizontalLayout_3, 3, 0, 1, 1)
-        self.formLayout = QtWidgets.QFormLayout()
-        self.formLayout.setObjectName("formLayout")
-        self.gridLayout_2.addLayout(self.formLayout, 4, 0, 1, 1)
-        self.verticalScrollBar = QtWidgets.QScrollBar(self.centralwidget)
-        self.verticalScrollBar.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.verticalScrollBar.setOrientation(QtCore.Qt.Vertical)
-        self.verticalScrollBar.setObjectName("verticalScrollBar")
-        self.gridLayout_2.addWidget(self.verticalScrollBar, 3, 1, 1, 1)
+        self.horizontalLayout.addWidget(self.textEdit)
+        self.formLayout.setLayout(0, QtWidgets.QFormLayout.SpanningRole, self.horizontalLayout)
+        self.gridLayout_3 = QtWidgets.QGridLayout()
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_3.addItem(spacerItem, 1, 2, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(50, 10, QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_3.addItem(spacerItem1, 1, 0, 1, 1)
+        self.ConfirmButton = QtWidgets.QPushButton(self.FindFolder)
+        self.ConfirmButton.setEnabled(True)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(2)
+        sizePolicy.setVerticalStretch(2)
+        sizePolicy.setHeightForWidth(self.ConfirmButton.sizePolicy().hasHeightForWidth())
+        self.ConfirmButton.setSizePolicy(sizePolicy)
+        self.ConfirmButton.setMinimumSize(QtCore.QSize(0, 30))
+        self.ConfirmButton.setMaximumSize(QtCore.QSize(100, 30))
+        self.ConfirmButton.setObjectName("ConfirmButton")
+        self.gridLayout_3.addWidget(self.ConfirmButton, 1, 1, 1, 1)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        self.gridLayout_3.addItem(spacerItem2, 0, 1, 1, 1)
+        self.formLayout.setLayout(2, QtWidgets.QFormLayout.SpanningRole, self.gridLayout_3)
+        self.tabWidget.addTab(self.FindFolder, "")
+        self.tab_4 = QtWidgets.QWidget()
+        self.tab_4.setObjectName("tab_4")
+        self.tableView = QtWidgets.QTableView(self.tab_4)
+        self.tableView.setGeometry(QtCore.QRect(0, 0, 571, 371))
+        self.tableView.setObjectName("tableView")
+        self.tabWidget.addTab(self.tab_4, "")
+        self.horizontalLayout_3.addWidget(self.tabWidget)
+        self.gridLayout_2.addLayout(self.horizontalLayout_3, 3, 1, 1, 1)
         MoverConfiguratorMain.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MoverConfiguratorMain)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MoverConfiguratorMain)
+
+
+        self.setupAddedStuff()
 
     def retranslateUi(self, MoverConfiguratorMain):
         _translate = QtCore.QCoreApplication.translate
         MoverConfiguratorMain.setWindowTitle(_translate("MoverConfiguratorMain", "MoverConfigurator"))
         self.findFolderButton.setText(_translate("MoverConfiguratorMain", "Ricerca cartella"))
         self.textEdit.setDocumentTitle(_translate("MoverConfiguratorMain", "folderName"))
+        self.ConfirmButton.setText(_translate("MoverConfiguratorMain", "Conferma"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.FindFolder), _translate("MoverConfiguratorMain", "Ricerca cartella"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), _translate("MoverConfiguratorMain", "Applicazioni VR"))
+
+    def setupAddedStuff(self):
+        self.findFolderButton.clicked.connect(FindFolder)
+        self.setupTableView()
+
+    def setupTableView(self):
+
+        data = [
+            [4, 9, 2],
+            [1, 0, 0],
+            [3, 5, 0],
+            [3, 3, 2],
+            [7, 8, 9],
+        ]
+
+        model = TableModel(data)
+        self.tableView.setModel(model)
+
 
     def setFolder(self, folder):
         self.textEdit.setText(folder)
 
+class TableModel(QtCore.QAbstractTableModel):
+    def __init__(self, data):
+        super(TableModel, self).__init__()
+        self._data = data
 
-class SearchFolder(QtWidgets.QWidget):
+    def data(self, index, role):
+        if role == QtCore.Qt.DisplayRole:
+            # See below for the nested-list data structure.
+            # .row() indexes into the outer list,
+            # .column() indexes into the sub-list
+            return self._data[index.row()][index.column()]
+
+    def rowCount(self, index):
+        # The length of the outer list.
+        return len(self._data)
+
+    def columnCount(self, index):
+        # The following takes the first sub-list, and returns
+        # the length (only works if all rows are an equal length)
+        return len(self._data[0])
+
+
+#Logic
+class FindFolder(QtWidgets.QWidget):
 
     def __init__(self):
         super().__init__()
